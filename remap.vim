@@ -4,14 +4,15 @@
   xnoremap J :m '>+1<CR>gv=gv
   xnoremap K :m '<-2<CR>gv=gv
   nmap <leader>w :w!<CR>
-  nmap ]a :bn<CR>
-  nmap [a :bp<CR>
+  nmap ]a :w<CR>:next<CR>
+  nmap [a :w<CR>:prev<CR>
   nmap ]<space> o<ESC>k
   nmap [<space> O<ESC>j
 
   " F3 快速插入明天的日期和星期几
   nmap <F2> :r!date +"\%Y年\%m月\%d日 \%A"<cr>
   nmap <F3> :r!date -d "+1 day" +"\%Y年\%m月\%d日 \%A"<cr>
+  nmap <F5> :exec '!clear && node %'<cr>
 
   " 在块选模式下，把选中的 HTML 代码变成模板字符串
   vmap <silent> ;m :s?^\(\s*\)+'\([^']\+\)',*\s*$?\1\2?g<CR>
